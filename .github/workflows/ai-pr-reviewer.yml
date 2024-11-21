@@ -5,7 +5,8 @@ permissions:
   pull-requests: write
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
   pull_request_review_comment:
     types: [created]
 
@@ -26,5 +27,5 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         with:
           debug: false
-          review_simple_changes: false
-          review_comment_lgtm: false
+          openai_base_url: "https://genaidevelopmentandtesting.openai.azure.com/2023-03-15-preview"
+          openai_heavy_model: "DevelopmentAndTesting4oMini"
