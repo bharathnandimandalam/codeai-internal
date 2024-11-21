@@ -1,0 +1,1 @@
+import cv2;cv.imread("1.jpg");a=cv2:cvtcolor(RGB2BGR);cv2.imshow(a)
